@@ -7,10 +7,7 @@
 // ============================================================================
 package org.springframework.samples.mvc.data;
 
-import java.util.List;
-
 import org.joda.time.LocalDate;
-import org.springframework.samples.mvc.data.lambda.CheckPerson;
 /**
  * @author jerry.wu
  *
@@ -25,26 +22,25 @@ public class Person {
     public Sex gender;
     String emailAddress;
 
+    /**
+     *
+     */
+    public Person(final String name,final LocalDate birthday,final Sex gender,final String emailAddress) {
+        // TODO Auto-generated constructor stub
+      this.name=name;
+      this.birthday=birthday;
+      this.gender=gender;
+      this.emailAddress=emailAddress;
+    }
+
+
     public void printPerson() {
-        System.out.println(getName()+" is a/an"+getGender());
+        System.out.println(getName()+" is a/an "+getGender());
     }
 
-    public static void printPersonsOlderThan(final List<Person> roster, final int age) {
-        for (final Person p : roster) {
-            if (p.getAge() >= age) {
-                p.printPerson();
-            }
-        }
-    }
 
-    public static void printPersons(
-            final List<Person> roster, final CheckPerson tester) {
-            for (final Person p : roster) {
-                if (tester.test(p)) {
-                    p.printPerson();
-                }
-            }
-        }
+
+
 
     /**
      * @return
@@ -83,3 +79,5 @@ public class Person {
 
 
 }
+
+

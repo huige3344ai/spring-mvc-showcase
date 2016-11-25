@@ -7,23 +7,11 @@
 // ============================================================================
 package org.springframework.samples.mvc.data.lambda;
 
-import org.springframework.samples.mvc.data.Person;
-
 /**
  * @author jerry.wu
  *
  */
-public class CheckPersonEligibleForSelectiveService implements CheckPerson {
+public interface Predicate<T> {
 
-    /* (non-Javadoc)
-     * @see org.springframework.samples.mvc.data.lambda.CheckPerson#test(java.security.acl.Permission)
-     */
-    @Override
-    public boolean test(final Person p) {
-        return p.gender == Person.Sex.MALE &&
-                p.getAge() >= 18 &&
-                p.getAge() <= 25;
-    }
-
-
+    public boolean test(T t);
 }
