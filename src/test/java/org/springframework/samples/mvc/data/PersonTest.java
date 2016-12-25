@@ -47,14 +47,14 @@ public class PersonTest {
 	        	
 	        	Consumer<Integer> myConsumer = (y)->
 	        	{
-	                System.out.println("x = " + x); // Statement A
+	                //System.out.println("x = " + x); // Statement A
 	                System.out.println("y = " + y);
 	                System.out.println("this.x = " + this.x);
 	                System.out.println("LambdaScopeTest.this.x = " +
 	                		PersonTest.this.x);	        		
 	        	};
 	        	
-	        	myConsumer.accept(x);
+	        	//myConsumer.accept(null);
 	        	
 
 	        }
