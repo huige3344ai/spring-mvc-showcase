@@ -8,6 +8,7 @@
 package org.springframework.samples.mvc.data;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -92,5 +93,15 @@ public class PersonServices {
                 }
             }
         }
+    
+    void invoke(Runnable r) {
+    	System.out.println("invoke(Runnable r)");
+        r.run();
+    }
 
+    <T> T invoke(Callable<T> c) throws Exception {
+    	System.out.println("invoke(Callable<T> c)");
+        return c.call();
+    }
+    
 }
